@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Voting App</title>
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    .add-area {
+      margin-top: 10px;
+    }
+
+    .add-button {
+      padding: 5px 10px;
+      margin-left: 5px;
+      cursor: pointer;
+    }
+
+    .name-input {
+      padding: 5px;
+    }
+
+    /* Flexbox container to place Voters and Candidates tables side by side */
+    .tables-container {
+      display: flex;
+    }
+
+    /* Style for each table container */
+    .table-container {
+      flex: 1; /* Make both tables equally wide */
+      margin-right: 10px; /* Add some spacing between the tables */
+    }
+  </style>
+</head>
+<body>
+  <h1>Voting app</h1>
+
+  <div class="tables-container">
+    <div class="table-container" id="voters">
+      <h2>Voters</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Has Voted</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+      <div class="add-area">
+        <input type="text" id="newVoterName" class="name-input" placeholder="New voter name">
+        <button class="add-button" onclick="addVoter()">+</button>
+      </div>
+    </div>
+
+    <div class="table-container" id="candidates">
+      <h2>Candidates</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Votes</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+      <div class="add-area">
+        <input type="text" id="newCandidateName" class="name-input" placeholder="New candidate name">
+        <button class="add-button" onclick="addCandidate()">+</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="votingForm">
+    <h2>Vote!</h2>
+    <label for="voterSelect">I am</label>
+    <select id="voterSelect">
+    </select>
+
+    <label for="candidateSelect">I vote for</label>
+    <select id="candidateSelect">
+    </select>
+
+    <button onclick="submitVote()">Submit!</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
