@@ -33,15 +33,17 @@
       padding: 5px;
     }
 
-    /* Flexbox container to place Voters and Candidates tables side by side */
     .tables-container {
       display: flex;
     }
 
-    /* Style for each table container */
     .table-container {
-      flex: 1; /* Make both tables equally wide */
-      margin-right: 10px; /* Add some spacing between the tables */
+      flex: 1;
+      margin-right: 10px; 
+    }
+
+    .resetForm {
+      margin-top: 30px;
     }
   </style>
 </head>
@@ -97,6 +99,10 @@
     </select>
 
     <button onclick="submitVote()">Submit!</button>
+  </div>
+
+  <div class="resetForm">
+    <button onclick="resetVoting()">Reset voting</button>
   </div>
 
   <script src="app.js"></script>

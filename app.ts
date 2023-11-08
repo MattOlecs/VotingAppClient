@@ -108,6 +108,16 @@
     });
   }
 
+  async function resetVoting() {
+    await fetch('https://localhost:7027/Votes/voting/reset', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({}) // Send an empty JSON object as the request body
+    });
+  }
+
   function connectWebSockets(){
      const socket = new WebSocket("wss://localhost:7027/ws")
      socket.onopen = function() {
